@@ -1,6 +1,7 @@
 {
   "name": "fantasy-sports-quiz",
   "version": "1.0.0",
+  "engines": { "node": "24.x" },
   "description": "Dynamic fantasy sports trivia quiz with timed questions and AI-powered question generation",
   "main": "backend/quiz-backend.js",
   "type": "commonjs",
