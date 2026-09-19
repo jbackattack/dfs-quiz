@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "name": "fantasy-sports-quiz",
+  "public": false,
+  "builds": [
+    {
+      "src": "backend/quiz-backend.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": "backend/**"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/quiz-backend.js"
+    },
+    {
+      "src": "/health",
+      "dest": "backend/quiz-backend.js"
+    },
+    {
+      "src": "/(.*\\.html)$",
+      "dest": "frontend/$1"
+    },
+    {
+      "src": "/(.*\\.js)$",
+      "dest": "frontend/$1"
+    },
+    {
+      "src": "/",
+      "dest": "frontend/quiz-with-timer.html"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "regions": ["iad1"]
+}
