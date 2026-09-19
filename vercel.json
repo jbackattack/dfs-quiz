@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "outputDirectory": "frontend",
   "routes": [
     { "src": "/api/(.*)", "dest": "backend/quiz-backend.js" },
     { "src": "/health", "dest": "backend/quiz-backend.js" },
-    { "src": "/(.*)", "dest": "/$1" },
-    { "src": "/(.*)", "dest": "/quiz-with-timer.html" }
+    { "src": "/(.*)", "dest": "/public/$1" }
   ],
   "env": { "NODE_ENV": "production" },
   "regions": ["iad1"]
