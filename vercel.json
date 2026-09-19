@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "fantasy-sports-quiz",
   "builds": [
     {
       "src": "backend/quiz-backend.js",
