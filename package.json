@@ -8,7 +8,8 @@
     "dev": "node backend/quiz-backend.js",
     "start": "node backend/quiz-backend.js",
     "build": "echo 'No build step required - static frontend + Node API'",
-    "test": "echo 'Tests coming soon' && exit 0"
+    "test": "echo 'Tests coming soon' && exit 0",
+    "vercel-build": "echo 'Build handled by vercel.json config'"
   },
   "keywords": [
     "fantasy",
