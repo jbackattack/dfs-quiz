@@ -1,9 +1,30 @@
-{{
+{
   "version": 2,
   "outputDirectory": ".",
   "routes": [
-    ...
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/quiz-backend.js"
+    },
+    {
+      "src": "/health",
+      "dest": "backend/quiz-backend.js"
+    },
+    {
+      "src": "/(.*\\.html)$",
+      "dest": "frontend/$1"
+    },
+    {
+      "src": "/(.*\\.js)$",
+      "dest": "frontend/$1"
+    },
+    {
+      "src": "/",
+      "dest": "frontend/quiz-with-timer.html"
+    }
   ],
-  "env": {...},
+  "env": {
+    "NODE_ENV": "production"
+  },
   "regions": ["iad1"]
-}}
+}
