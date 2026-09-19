@@ -2,9 +2,6 @@
   "version": 2,
   "routes": [
     { "src": "/api/(.*)", "dest": "backend/quiz-backend.js" },
-    { "src": "/health", "dest": "backend/quiz-backend.js" },
-    { "src": "/(.*)", "dest": "/public/$1" }
-  ],
-  "env": { "NODE_ENV": "production" },
-  "regions": ["iad1"]
+    { "src": "/health", "dest": "backend/quiz-backend.js" }
+  ]
 }
