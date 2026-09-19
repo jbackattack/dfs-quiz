@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "public": "frontend",
+  "outputDirectory": "frontend",
   "routes": [
     { "src": "/api/(.*)", "dest": "backend/quiz-backend.js" },
     { "src": "/health", "dest": "backend/quiz-backend.js" },
