@@ -1,0 +1,29 @@
+{
+  "name": "dfs-quiz",
+  "version": "1.0.0",
+  "description": "Daily Fantasy Sports Quiz - Test your knowledge",
+  "main": "api.js",
+  "scripts": {
+    "start": "node api.js",
+    "dev": "node api.js",
+    "build": "echo 'Static frontend, no build needed'"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "axios": "^1.6.0"
+  },
+  "keywords": [
+    "fantasy-sports",
+    "quiz",
+    "nfl",
+    "nba",
+    "mlb",
+    "nhl"
+  ],
+  "author": "JBackAttack",
+  "license": "MIT"
+}
