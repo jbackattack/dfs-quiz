@@ -1,13 +1,7 @@
 {
   "version": 2,
   "buildCommand": "npm install",
-  "outputDirectory": ".",
-  "functions": {
-    "api.js": {
-      "memory": 1024,
-      "maxDuration": 30
-    }
-  },
+  "outputDirectory": "public",
   "routes": [
     {
       "src": "/api/(.*)",
@@ -15,7 +9,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/public/index.html"
     }
   ]
 }
