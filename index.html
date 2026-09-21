@@ -37,8 +37,8 @@
 
     .header h1 {
       font-size: 32px;
+      margin-bottom: 10px;
       color: #333;
-      margin-bottom: 8px;
     }
 
     .header p {
@@ -48,7 +48,7 @@
 
     /* ========== SCREEN: HOME ========== */
     #homeScreen {
-      display: none;
+      display: block;
     }
 
     .sport-selection {
@@ -59,53 +59,59 @@
     }
 
     .sport-btn {
-      padding: 20px;
-      background: #f5f5f5;
-      border: 2px solid #ddd;
+      padding: 25px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
       border-radius: 12px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 600;
       transition: all 0.3s;
     }
 
     .sport-btn:hover {
-      border-color: #667eea;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
     }
 
     .sport-btn.active {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border-color: #667eea;
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.6);
+      transform: translateY(-5px);
     }
 
-    /* ========== ERA TOGGLE ========== */
+    /* ERA TOGGLE */
     #eraToggleContainer {
-      text-align: center;
-      margin: 20px 0;
-      padding: 20px;
-      background: #f9f9f9;
-      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+
+    .era-label {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .era-toggle-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
     }
 
     .era-toggle-btn {
-      padding: 10px 15px;
+      padding: 12px;
       background: #f5f5f5;
       border: 2px solid #ddd;
       border-radius: 8px;
       cursor: pointer;
-      margin: 0 5px;
       font-size: 14px;
       font-weight: 600;
-      transition: all 0.2s;
+      transition: all 0.3s;
     }
 
     .era-toggle-btn:hover {
       border-color: #667eea;
-      background: #f0f7ff;
+      background: #f0f0ff;
     }
 
     .era-toggle-btn.active {
@@ -114,106 +120,26 @@
       border-color: #667eea;
     }
 
-    /* ========== WEEK INDICATOR ========== */
-    #weekIndicator {
-      text-align: center;
-      font-size: 12px;
-      color: #999;
-      margin: 10px 0;
-      font-style: italic;
-    }
-
-    .week-badge {
-      display: inline-block;
-      background: #FF6B35;
-      color: white;
-      padding: 4px 8px;
-      border-radius: 12px;
-      font-size: 11px;
-      margin-left: 10px;
-      font-weight: 600;
-    }
-
-    /* ========== POSITION FILTER ========== */
-    #positionFilter {
-      display: none;
-      text-align: center;
-      margin: 15px 0;
+    .start-btn {
+      width: 100%;
       padding: 15px;
-      background: #f9f9f9;
-      border-radius: 12px;
-    }
-
-    .position-btn {
-      padding: 8px 12px;
-      background: #f5f5f5;
-      border: 2px solid #ddd;
-      border-radius: 6px;
-      cursor: pointer;
-      margin: 0 3px;
-      font-size: 12px;
-      font-weight: bold;
-      transition: all 0.2s;
-    }
-
-    .position-btn:hover {
-      border-color: #667eea;
-    }
-
-    .position-btn.active {
-      background: #667eea;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      border-color: #667eea;
-    }
-
-    /* ========== DIFFICULTY SELECTION ========== */
-    .difficulty-selection {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .difficulty-btn {
-      padding: 15px;
-      background: #f5f5f5;
-      border: 2px solid #ddd;
-      border-radius: 10px;
-      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
       font-weight: 600;
+      cursor: pointer;
       transition: all 0.3s;
     }
 
-    .difficulty-btn:hover {
-      border-color: #667eea;
+    .start-btn:hover:not(:disabled) {
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
     }
 
-    .difficulty-btn.active {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border-color: #667eea;
-    }
-
-    /* ========== SCREEN: LOADING ========== */
-    #loadingMessage {
-      display: none;
-      text-align: center;
-      padding: 40px;
-    }
-
-    .spinner {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      border: 4px solid #f3f3f3;
-      border-top: 4px solid #667eea;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .start-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
     /* ========== SCREEN: QUIZ ========== */
@@ -221,24 +147,55 @@
       display: none;
     }
 
-    .progress-bar {
-      width: 100%;
-      height: 6px;
-      background: #eee;
-      border-radius: 3px;
-      overflow: hidden;
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #eee;
     }
 
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-      width: 0%;
-      transition: width 0.3s;
+    .quiz-info {
+      font-size: 14px;
+      color: #666;
+      font-weight: 600;
     }
 
-    #questionContainer {
-      margin-bottom: 30px;
+    .quiz-score {
+      text-align: right;
+    }
+
+    .quiz-score-label {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .quiz-score-value {
+      font-size: 24px;
+      font-weight: bold;
+      color: #667eea;
+    }
+
+    .timer-container {
+      text-align: center;
+      margin: 30px 0;
+      padding: 20px;
+      background: #f5f5f5;
+      border-radius: 8px;
+    }
+
+    .timer-display {
+      font-size: 48px;
+      font-weight: bold;
+      color: #667eea;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timer-label {
+      font-size: 12px;
+      color: #999;
+      margin-top: 5px;
     }
 
     #questionText {
@@ -246,113 +203,102 @@
       font-weight: 600;
       color: #333;
       margin-bottom: 20px;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
-    .era-badge, .week-badge {
-      display: inline-block;
-      background: #667eea;
-      color: white;
-      padding: 4px 8px;
-      border-radius: 12px;
-      font-size: 11px;
-      margin-left: 10px;
-      font-weight: 600;
-    }
-
-    .era-badge {
-      background: #667eea;
-    }
-
-    .week-badge {
-      background: #FF6B35;
-    }
-
-    .timer-display {
-      text-align: center;
+    #statInfo {
+      font-size: 14px;
+      color: #666;
       margin-bottom: 20px;
-    }
-
-    .timer {
-      font-size: 36px;
-      font-weight: bold;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      min-height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .timer.ready {
-      background: #f0f0f0;
-      color: #999;
-    }
-
-    .timer.active {
-      background: #4CAF50;
-      color: white;
-    }
-
-    .timer.warning {
-      background: #FFC107;
-      color: white;
-    }
-
-    .timer.danger {
-      background: #F44336;
-      color: white;
-    }
-
-    .timer-label {
-      font-size: 12px;
-      color: #999;
-      text-transform: uppercase;
+      padding: 12px;
+      background: #f9f9f9;
+      border-left: 4px solid #667eea;
+      border-radius: 4px;
     }
 
     .options-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 12px;
+      margin-bottom: 20px;
     }
 
-    .option-btn {
+    .option {
       padding: 15px;
       background: #f5f5f5;
       border: 2px solid #ddd;
-      border-radius: 10px;
+      border-radius: 8px;
       cursor: pointer;
       font-size: 14px;
       font-weight: 600;
-      transition: all 0.3s;
-      min-height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      transition: all 0.2s;
     }
 
-    .option-btn:hover:not(:disabled) {
+    .option:hover {
       border-color: #667eea;
-      background: #f0f7ff;
+      background: #f0f0ff;
     }
 
-    .option-btn:disabled {
-      cursor: not-allowed;
-      opacity: 0.5;
+    .option.selected {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-color: #667eea;
     }
 
-    .option-btn.correct {
+    .option.correct {
       background: #4CAF50;
       color: white;
       border-color: #4CAF50;
     }
 
-    .option-btn.incorrect {
+    .option.incorrect {
       background: #F44336;
       color: white;
       border-color: #F44336;
+    }
+
+    .option:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    #submitBtn {
+      flex: 1;
+      padding: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    #submitBtn:hover:not(:disabled) {
+      opacity: 0.9;
+    }
+
+    #submitBtn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    #pointsDisplay {
+      flex: 0 1 auto;
+      padding: 15px 20px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      min-width: 100px;
+      font-size: 14px;
     }
 
     /* ========== SCREEN: RESULTS ========== */
@@ -361,335 +307,413 @@
       text-align: center;
     }
 
-    .final-score {
+    #finalScore {
       font-size: 48px;
       font-weight: bold;
       color: #667eea;
-      margin: 30px 0;
-    }
-
-    .score-breakdown {
-      background: #f9f9f9;
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-      text-align: left;
-    }
-
-    .breakdown-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .breakdown-item:last-child {
-      border-bottom: none;
-    }
-
-    .time-scale-breakdown {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
       margin: 20px 0;
     }
 
-    .breakdown-card {
-      background: white;
-      border: 2px solid #eee;
-      border-radius: 10px;
-      padding: 15px;
-    }
-
-    .breakdown-label {
-      font-size: 12px;
-      color: #999;
-      margin-bottom: 5px;
-    }
-
-    .breakdown-value {
-      font-size: 20px;
-      font-weight: bold;
+    #performanceText {
+      font-size: 18px;
       color: #333;
+      margin: 15px 0;
     }
 
-    /* ========== BUTTONS ========== */
-    .button-group {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 20px;
+    #statsText {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #666;
+      text-align: left;
+      margin: 20px 0;
     }
 
-    .btn {
+    .restart-btn {
+      width: 100%;
       padding: 15px;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s;
+      margin-top: 20px;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    .restart-btn:hover {
+      opacity: 0.9;
     }
 
-    .btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
+    .timer-info {
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      margin-top: 15px;
     }
 
-    .btn.secondary {
-      background: #f5f5f5;
-      color: #333;
-      border: 2px solid #ddd;
+    .loading-spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #667eea;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
     }
 
-    .btn.secondary:hover {
-      border-color: #667eea;
-      background: #f0f7ff;
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- HEADER -->
-    <div class="header">
-      <h1>🏆 DFS Quiz</h1>
-      <p>Test Your Daily Fantasy Sports Knowledge</p>
+
+<div class="container">
+  <div class="header">
+    <h1>🏆 Fantasy Sports Quiz</h1>
+    <p>Test Your Daily Fantasy Sports Knowledge</p>
+  </div>
+
+  <!-- HOME SCREEN -->
+  <div id="homeScreen">
+    <h2 style="margin-bottom: 20px; color: #333; font-size: 18px;">Select Your Sport</h2>
+
+    <div class="sport-selection">
+      <button class="sport-btn" data-sport="nfl">🏈 NFL</button>
+      <button class="sport-btn" data-sport="nba">🏀 NBA</button>
+      <button class="sport-btn" data-sport="mlb">⚾ MLB</button>
+      <button class="sport-btn" data-sport="nhl">🏒 NHL</button>
     </div>
 
-    <!-- SCREEN: HOME -->
-    <div id="homeScreen">
-      <h2 style="margin-bottom: 20px; color: #333;">Select Your Sport</h2>
-      
-      <div class="sport-selection" id="sportGrid">
-        <button class="sport-btn" data-sport="nfl">🏈 NFL</button>
-        <button class="sport-btn" data-sport="nba">🏀 NBA</button>
-        <button class="sport-btn" data-sport="mlb">⚾ MLB</button>
-        <button class="sport-btn" data-sport="nhl">🏒 NHL</button>
-      </div>
-
-      <!-- ERA TOGGLE -->
-      <div id="eraToggleContainer">
-        <h3 style="margin-bottom: 15px; color: #333; font-size: 14px;">Choose Your Quiz Type</h3>
+    <div id="eraToggleContainer">
+      <div class="era-label">Choose Your Quiz Type</div>
+      <div class="era-toggle-group">
         <button class="era-toggle-btn active" data-era="recent">📊 Last Week</button>
         <button class="era-toggle-btn" data-era="season">📈 Season</button>
         <button class="era-toggle-btn" data-era="alltime">🏆 All-Time</button>
       </div>
-
-      <div id="weekIndicator"></div>
-
-      <!-- POSITION FILTER (Recent Only) -->
-      <div id="positionFilter">
-        <h3 style="margin-bottom: 10px; color: #333; font-size: 14px;">Player Position</h3>
-        <button class="position-btn active" data-position="qb">QB</button>
-        <button class="position-btn" data-position="rb">RB</button>
-        <button class="position-btn" data-position="wr">WR</button>
-        <button class="position-btn" data-position="te">TE</button>
-      </div>
-
-      <!-- DIFFICULTY SELECTION -->
-      <h2 style="margin: 30px 0 20px; color: #333; font-size: 18px;">Select Difficulty</h2>
-      <div class="difficulty-selection">
-        <button class="difficulty-btn active" data-difficulty="easy">Easy</button>
-        <button class="difficulty-btn" data-difficulty="medium">Medium</button>
-        <button class="difficulty-btn" data-difficulty="hard">Hard</button>
-      </div>
-
-      <button class="btn" id="startBtn" style="width: 100%; margin-top: 20px;">Start Quiz</button>
     </div>
 
-    <!-- SCREEN: LOADING -->
-    <div id="loadingMessage">
-      <div class="spinner"></div>
-      <p style="margin-top: 20px; color: #999;">Loading questions...</p>
+    <button class="start-btn" id="startQuizBtn" onclick="app.startQuiz()">Start Quiz</button>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div id="quizScreen">
+    <div class="quiz-header">
+      <div class="quiz-info">
+        <span id="progressDisplay">Question 1 of 10</span>
+      </div>
+      <div class="quiz-score">
+        <div class="quiz-score-label">Score</div>
+        <div class="quiz-score-value" id="currentScore">0</div>
+      </div>
     </div>
 
-    <!-- SCREEN: QUIZ -->
-    <div id="quizScreen">
-      <div class="progress-bar">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
-
-      <div id="questionContainer">
-        <div id="questionText"></div>
-        
-        <div class="timer-display">
-          <div class="timer ready" id="timer">
-            <span id="timerValue">--</span>
-          </div>
-          <div class="timer-label" id="timerLabel">Reading...</div>
-        </div>
-
-        <div class="options-container" id="optionsContainer"></div>
-      </div>
-
-      <p style="text-align: center; color: #999; font-size: 12px; margin-top: 20px;">
-        <span id="questionCounter"></span>
-      </p>
+    <div class="timer-container">
+      <div class="timer-display" id="timerDisplay">10</div>
+      <div class="timer-label" id="timerLabel">Reading...</div>
     </div>
 
-    <!-- SCREEN: RESULTS -->
-    <div id="resultsScreen">
-      <h2 style="color: #333;">Quiz Complete! 🎉</h2>
-      
-      <div class="final-score" id="finalScore">0/0</div>
+    <div id="questionText">Loading question...</div>
+    <div id="statInfo"></div>
 
-      <div class="score-breakdown">
-        <div class="breakdown-item">
-          <span>Correct Answers:</span>
-          <span id="correctCount">0</span>
-        </div>
-        <div class="breakdown-item">
-          <span>Accuracy:</span>
-          <span id="accuracyPercent">0%</span>
-        </div>
-        <div class="breakdown-item">
-          <span>Average Time:</span>
-          <span id="avgTime">0s</span>
-        </div>
-      </div>
+    <div class="options-container" id="optionsContainer"></div>
 
-      <h3 style="margin-top: 30px; color: #333; font-size: 16px;">Breakdown by Type</h3>
-      <div class="time-scale-breakdown" id="timeScaleBreakdown"></div>
+    <div class="button-row">
+      <button id="submitBtn" disabled onclick="app.submitAnswer()">Submit Answer</button>
+      <div id="pointsDisplay">Answer to score</div>
+    </div>
 
-      <div class="button-group">
-        <button class="btn" id="retryBtn">Retry Quiz</button>
-        <button class="btn secondary" id="homeBtn">Home</button>
-      </div>
+    <div class="timer-info">
+      <strong>Timing:</strong> 2.5s read time, then 10s countdown<br>
+      <strong>Scoring:</strong> 5 pts max, -1 pt every 2 seconds
     </div>
   </div>
 
-  <!--script src="recent-questions-integration.js"></script>
-  <script>
-    // Configuration
-    const API_BASE = 'http://localhost:3001';
-    let currentSport = 'nfl';
-    let currentEra = 'recent';
-    let currentPosition = 'qb';
-    let currentDifficulty = 'easy';
+  <!-- RESULTS SCREEN -->
+  <div id="resultsScreen">
+    <h2 style="margin-bottom: 20px;">Quiz Complete! 🎉</h2>
+    <div id="finalScore">0 / 50</div>
+    <div id="performanceText">Great job!</div>
+    <div id="statsText">Stats will appear here</div>
+    <button class="restart-btn" onclick="location.reload()">Take Another Quiz</button>
+  </div>
+</div>
 
-    // Initialize on page load
-    document.addEventListener('DOMContentLoaded', async () => {
-      // Show home screen
-      document.getElementById('homeScreen').style.display = 'block';
+<script>
+// ============================================
+// QUIZ APPLICATION
+// ============================================
 
-      // Initialize managers
-      const questionManager = new QuestionManager();
-      const recentManager = new RecentQuestionsManager(API_BASE);
-      const quizUI = new QuizUIWithRecent(questionManager, recentManager);
+const MOCK_QUESTIONS = {
+  nfl: {
+    recent: [
+      { q: "Who led the NFL in rushing yards last week?", a: "Derrick Henry", opts: ["Derrick Henry", "Josh Jacobs", "Saquon Barkley", "Christian McCaffrey"], stats: "3 carries, 120 yards" },
+      { q: "Which QB threw for the most yards in the last week?", a: "Josh Allen", opts: ["Josh Allen", "Jared Goff", "Lamar Jackson", "Patrick Mahomes"], stats: "42.3 points" },
+      { q: "Who had the most receiving yards last week?", a: "Ja'Marr Chase", opts: ["Ja'Marr Chase", "Tyreek Hill", "CeeDee Lamb", "Travis Kelce"], stats: "8 rec, 120 yards" },
+      { q: "Which RB scored the most fantasy points this week?", a: "Saquon Barkley", opts: ["Saquon Barkley", "Christian McCaffrey", "Derrick Henry", "Josh Jacobs"], stats: "44.9 points" },
+      { q: "Who led in pass attempts last week?", a: "Josh Allen", opts: ["Josh Allen", "Jared Goff", "Lamar Jackson", "Dak Prescott"], stats: "42 attempts" }
+    ],
+    season: [
+      { q: "Who is the NFL's leading rusher this season?", a: "Derrick Henry", opts: ["Derrick Henry", "Josh Jacobs", "Saquon Barkley", "Christian McCaffrey"], stats: "1200+ yards" },
+      { q: "Which WR has the most receiving yards this season?", a: "Tyreek Hill", opts: ["Tyreek Hill", "CeeDee Lamb", "Ja'Marr Chase", "Justin Jefferson"], stats: "1100+ yards" },
+      { q: "Who is leading in passing yards this season?", a: "Josh Allen", opts: ["Josh Allen", "Jared Goff", "Lamar Jackson", "Patrick Mahomes"], stats: "4000+ yards" }
+    ],
+    alltime: [
+      { q: "Who holds the all-time rushing record?", a: "Emmitt Smith", opts: ["Emmitt Smith", "Walter Payton", "Barry Sanders", "Curtis Martin"], stats: "18,355 yards" },
+      { q: "Who has the most career passing yards?", a: "Tom Brady", opts: ["Tom Brady", "Peyton Manning", "Drew Brees", "Brett Favre"], stats: "89,214 yards" }
+    ]
+  },
+  nba: {
+    recent: [
+      { q: "Who led the NBA in points last week?", a: "LeBron James", opts: ["LeBron James", "Giannis Antetokounmpo", "Kevin Durant", "Stephen Curry"], stats: "28.5 PPG" },
+      { q: "Which team had the best record last week?", a: "Celtics", opts: ["Celtics", "Warriors", "Lakers", "Suns"], stats: "4-1" }
+    ],
+    season: [
+      { q: "Who is the NBA's leading scorer this season?", a: "LeBron James", opts: ["LeBron James", "Giannis Antetokounmpo", "Kevin Durant", "Luka Doncic"], stats: "28+ PPG" }
+    ],
+    alltime: [
+      { q: "Who is the all-time leading scorer in NBA history?", a: "LeBron James", opts: ["LeBron James", "Kareem Abdul-Jabbar", "Karl Malone", "Kobe Bryant"], stats: "40,000+ points" }
+    ]
+  },
+  mlb: {
+    recent: [
+      { q: "Who led MLB in home runs last week?", a: "Aaron Judge", opts: ["Aaron Judge", "Juan Soto", "Kyle Schwarber", "Mookie Betts"], stats: "3 HR" }
+    ],
+    season: [
+      { q: "Who has the most home runs this season?", a: "Aaron Judge", opts: ["Aaron Judge", "Juan Soto", "Kyle Schwarber", "Mike Trout"], stats: "50+ HR" }
+    ],
+    alltime: [
+      { q: "Who holds the all-time home run record?", a: "Barry Bonds", opts: ["Barry Bonds", "Aaron Judge", "Hank Aaron", "Babe Ruth"], stats: "762 HR" }
+    ]
+  },
+  nhl: {
+    recent: [
+      { q: "Who led NHL in goals last week?", a: "Connor McDavid", opts: ["Connor McDavid", "Auston Matthews", "Steven Stamkos", "David Pastrnak"], stats: "2 goals" }
+    ],
+    season: [
+      { q: "Who has the most goals this season?", a: "Connor McDavid", opts: ["Connor McDavid", "Auston Matthews", "David Pastrnak", "Artemi Panarin"], stats: "50+ goals" }
+    ],
+    alltime: [
+      { q: "Who is the all-time leading goal scorer?", a: "Wayne Gretzky", opts: ["Wayne Gretzky", "Alex Ovechkin", "Gordie Howe", "Mario Lemieux"], stats: "894 goals" }
+    ]
+  }
+};
 
-      // Update week indicator
-      await quizUI.updateWeekInfo();
+class Quiz {
+  constructor() {
+    this.selectedSport = null;
+    this.selectedEra = 'recent';
+    this.currentQuestions = [];
+    this.currentQuestion = 0;
+    this.score = 0;
+    this.selectedAnswer = null;
+    this.isAnswered = false;
+    this.timer = null;
+    this.timeLeft = 10;
+    this.isReading = true;
+  }
 
-      // Sport selection
-      document.querySelectorAll('.sport-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          document.querySelectorAll('.sport-btn').forEach(b => b.classList.remove('active'));
-          e.target.classList.add('active');
-          currentSport = e.target.dataset.sport;
-        });
-      });
+  startQuiz() {
+    this.selectedSport = document.querySelector('.sport-btn.active')?.dataset.sport;
+    this.selectedEra = document.querySelector('.era-toggle-btn.active')?.dataset.era || 'recent';
 
-      // Era selection
-      document.querySelectorAll('.era-toggle-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          document.querySelectorAll('.era-toggle-btn').forEach(b => b.classList.remove('active'));
-          e.target.classList.add('active');
-          currentEra = e.target.dataset.era;
+    if (!this.selectedSport) {
+      alert('Please select a sport');
+      return;
+    }
 
-          // Show position filter only for recent
-          const positionFilter = document.getElementById('positionFilter');
-          positionFilter.style.display = currentEra === 'recent' ? 'block' : 'none';
-        });
-      });
+    // Load questions
+    this.currentQuestions = MOCK_QUESTIONS[this.selectedSport][this.selectedEra].slice(0, 10);
+    this.currentQuestion = 0;
+    this.score = 0;
+    this.selectedAnswer = null;
 
-      // Position selection
-      document.querySelectorAll('.position-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          document.querySelectorAll('.position-btn').forEach(b => b.classList.remove('active'));
-          e.target.classList.add('active');
-          currentPosition = e.target.dataset.position;
-        });
-      });
+    // Show quiz screen
+    document.getElementById('homeScreen').style.display = 'none';
+    document.getElementById('quizScreen').style.display = 'block';
 
-      // Difficulty selection
-      document.querySelectorAll('.difficulty-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          document.querySelectorAll('.difficulty-btn').forEach(b => b.classList.remove('active'));
-          e.target.classList.add('active');
-          currentDifficulty = e.target.dataset.difficulty;
-        });
-      });
+    this.showQuestion();
+  }
 
-      // Start quiz
-      document.getElementById('startBtn').addEventListener('click', async () => {
-        document.getElementById('homeScreen').style.display = 'none';
-        document.getElementById('loadingMessage').style.display = 'block';
+  showQuestion() {
+    if (this.currentQuestion >= this.currentQuestions.length) {
+      this.finishQuiz();
+      return;
+    }
 
-        try {
-          if (currentEra === 'recent') {
-            // Load recent questions
-            const questions = await recentManager.loadRecentQuestions(
-              currentSport,
-              currentPosition,
-              currentDifficulty
-            );
+    const q = this.currentQuestions[this.currentQuestion];
+    this.selectedAnswer = null;
+    this.isAnswered = false;
 
-            questionManager.currentQuestions = questions;
-            questionManager.questionIndex = 0;
-          } else {
-            // Load static questions (from original system)
-            const staticQuestions = await questionManager.loadQuestions(
-              currentSport,
-              'auto',
-              'auto',
-              { id: 'auto' },
-              currentEra
-            );
-            questionManager.currentQuestions = staticQuestions;
-            questionManager.questionIndex = 0;
-          }
+    // Update progress
+    document.getElementById('progressDisplay').textContent = `Question ${this.currentQuestion + 1} of ${this.currentQuestions.length}`;
 
-          document.getElementById('loadingMessage').style.display = 'none';
-          document.getElementById('quizScreen').style.display = 'block';
+    // Show question
+    document.getElementById('questionText').textContent = q.q;
+    document.getElementById('statInfo').textContent = `📊 ${q.stats}`;
 
-          quizUI.displayQuestion();
-        } catch (error) {
-          alert(`Error loading questions: ${error.message}`);
-          document.getElementById('loadingMessage').style.display = 'none';
-          document.getElementById('homeScreen').style.display = 'block';
-        }
-      });
+    // Create options
+    const container = document.getElementById('optionsContainer');
+    container.innerHTML = '';
+    q.opts.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'option';
+      btn.textContent = opt;
+      btn.onclick = () => this.selectOption(opt, btn);
+      container.appendChild(btn);
+    });
 
-      // Retry
-      document.getElementById('retryBtn').addEventListener('click', () => {
-        questionManager.questionIndex = 0;
-        questionManager.score = 0;
-        questionManager.scores = [];
-        questionManager.timeScaleScores = { singleGame: 0, singleSeason: 0, allTime: 0, recent: 0 };
-        
-        document.getElementById('resultsScreen').style.display = 'none';
-        document.getElementById('quizScreen').style.display = 'block';
-        quizUI.displayQuestion();
-      });
+    // Start timer
+    this.startTimer();
+  }
 
-      // Home
-      document.getElementById('homeBtn').addEventListener('click', () => {
-        questionManager.questionIndex = 0;
-        questionManager.score = 0;
-        questionManager.scores = [];
-        questionManager.timeScaleScores = { singleGame: 0, singleSeason: 0, allTime: 0, recent: 0 };
-        
-        document.getElementById('resultsScreen').style.display = 'none';
-        document.getElementById('homeScreen').style.display = 'block';
+  selectOption(text, btn) {
+    if (this.isAnswered) return;
+
+    document.querySelectorAll('.option').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    this.selectedAnswer = text;
+    document.getElementById('submitBtn').disabled = false;
+  }
+
+  startTimer() {
+    this.isReading = true;
+    this.timeLeft = 12.5; // 2.5s read + 10s countdown
+    const timerDisplay = document.getElementById('timerDisplay');
+    const timerLabel = document.getElementById('timerLabel');
+
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      this.timeLeft -= 0.1;
+
+      if (this.timeLeft > 10) {
+        timerLabel.textContent = 'Reading...';
+        timerDisplay.textContent = '—';
+      } else {
+        this.isReading = false;
+        timerLabel.textContent = 'Countdown';
+        timerDisplay.textContent = Math.ceil(this.timeLeft);
+      }
+
+      if (this.timeLeft <= 0) {
+        clearInterval(this.timer);
+        this.submitAnswer();
+      }
+    }, 100);
+  }
+
+  submitAnswer() {
+    if (this.isAnswered) return;
+
+    clearInterval(this.timer);
+    this.isAnswered = true;
+
+    const q = this.currentQuestions[this.currentQuestion];
+    const correct = this.selectedAnswer === q.a;
+
+    const timeUsed = Math.max(0, 12.5 - this.timeLeft);
+    let points = 0;
+    if (correct) {
+      points = Math.max(0, 5 - Math.floor((timeUsed - 2.5) / 2));
+    } else {
+      points = -1;
+    }
+
+    this.score += points;
+
+    // Show feedback
+    document.querySelectorAll('.option').forEach(btn => {
+      btn.disabled = true;
+      if (btn.textContent === q.a) {
+        btn.classList.add('correct');
+      } else if (btn.textContent === this.selectedAnswer) {
+        btn.classList.add('incorrect');
+      }
+    });
+
+    document.getElementById('currentScore').textContent = Math.max(0, this.score);
+    document.getElementById('pointsDisplay').textContent = `${correct ? '+' : ''}${points} pts`;
+    document.getElementById('submitBtn').disabled = true;
+
+    setTimeout(() => this.nextQuestion(), 2000);
+  }
+
+  nextQuestion() {
+    this.currentQuestion++;
+    this.showQuestion();
+  }
+
+  finishQuiz() {
+    document.getElementById('quizScreen').style.display = 'none';
+    document.getElementById('resultsScreen').style.display = 'block';
+
+    const maxScore = this.currentQuestions.length * 5;
+    document.getElementById('finalScore').textContent = `${Math.max(0, this.score)} / ${maxScore}`;
+
+    const pct = Math.max(0, Math.round((this.score / maxScore) * 100));
+    let msg = '';
+    if (pct >= 80) msg = '🔥 Fantastic! You\'re a fantasy expert!';
+    else if (pct >= 60) msg = '👍 Great job! You know your stuff!';
+    else if (pct >= 40) msg = '✅ Not bad! Keep studying!';
+    else msg = '📚 Keep practicing!';
+
+    document.getElementById('performanceText').textContent = msg;
+    document.getElementById('statsText').innerHTML = `
+      <strong>Your Results:</strong><br>
+      Score: ${Math.max(0, this.score)} / ${maxScore} points<br>
+      Accuracy: ${pct}%<br>
+      Sport: ${this.selectedSport.toUpperCase()}<br>
+      Type: ${this.selectedEra}
+    `;
+  }
+}
+
+// ============================================
+// APP CONTROLLER
+// ============================================
+
+const app = {
+  quiz: new Quiz(),
+
+  init() {
+    // Sport button clicks
+    document.querySelectorAll('.sport-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.sport-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
       });
     });
-  </script>
+
+    // Era button clicks
+    document.querySelectorAll('.era-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.era-toggle-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // Set default sport
+    document.querySelector('.sport-btn').click();
+  },
+
+  startQuiz() {
+    this.quiz.startQuiz();
+  },
+
+  submitAnswer() {
+    this.quiz.submitAnswer();
+  }
+};
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', () => app.init());
+</script>
+
 </body>
 </html>
